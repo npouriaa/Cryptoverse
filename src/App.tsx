@@ -1,7 +1,7 @@
-const App = () => {
-  return (
-    <div>Cryptoverse</div>
-  )
-}
+import "./App.css";
 
-export default App
+const App = () => {
+  return <div>Cryptoverse</div>;
+};
+
+export default App;
