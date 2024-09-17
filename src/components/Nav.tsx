@@ -27,7 +27,7 @@ const Nav = () => {
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
 
   return (
-    <nav className="h-16 py-2 px-4 bg-[#0D0D0D] border-b border-[#aaaaaa3c] flex items-center justify-between sticky top-0 z-10">
+    <nav className="h-16 py-2 px-4 bg-[#0D0D0D] border-b border-[#aaaaaa3c] flex items-center justify-between sticky top-0 z-[1000]">
       <Link className="text-2xl font-semibold flex" to="/">
         <span className="text-[#FF9332]">C</span>
         <p className="text-white">rypto</p>
