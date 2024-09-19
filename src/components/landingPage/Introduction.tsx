@@ -35,7 +35,7 @@ const Introduction = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.75 }}
-            className="w-full flex items-center max-sm:justify-center sm2:justify-evenly flex-wrap max-sm:gap-6 sm2:gap-4"
+            className="w-full flex items-center justify-center flex-wrap max-sm:gap-6 sm2:gap-4 md2:gap-8"
           >
             <div className="w-32 h-32 rounded-xl bg-[#1A1A1A] flex flex-col gap-4 items-center justify-center cursor-pointer hover:-translate-y-2 transition-all hover:border-[#FF9332] border border-[#1A1A1A] hover:shadow-[#FF9332_0_15px_40px_-25px]">
               <FaCoins className="fill-[#FF9332]" size={40} />
