@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 
 const App = () => {
   return (
-    <div className="dark:bg-black dark:text-white transition-all">
+    <div className="bg-black text-white transition-all">
       <Nav />
       <Outlet />
     </div>
