@@ -7,7 +7,7 @@ import { FaCodeCompare } from "react-icons/fa6";
 
 const Introduction = () => {
   return (
-    <div className="w-full h-[35rem] flex justify-center items-center">
+    <div className="w-full max-sm:h-[35rem] sm2:h-[30rem] flex justify-center items-center max-sm:mt-10 sm:mt-0">
       <div className="flex flex-col justify-center items-center relative">
         <img
           className=" absolute max-sm:hidden sm2:block"
