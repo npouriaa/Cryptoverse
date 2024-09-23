@@ -19,7 +19,7 @@ const Introduction = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.75 }}
+            transition={{ delay: 0.3, duration: 0.75 }}
             className="flex flex-col items-center justify-center gap-4 w-full"
           >
             <h1 className="max-sm:text-[2rem] sm2:text-4xl font-bold text-white text-center">

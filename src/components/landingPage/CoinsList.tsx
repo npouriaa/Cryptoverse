@@ -12,7 +12,7 @@ const CoinsList = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
 
   const getCoin = async () => {
     setLoading(true);
@@ -44,12 +44,12 @@ const CoinsList = () => {
   }, []);
 
   return (
-    <div
+    <section
       ref={ref}
       style={{
         transform: isInView ? "none" : "translateY(50px)",
         opacity: isInView ? 1 : 0,
-        transitionDelay: ".5s",
+        transitionDelay: ".3s",
         transitionDuration: "0.75s",
       }}
       className={`w-full flex flex-col items-center gap-5 ${
@@ -126,7 +126,7 @@ const CoinsList = () => {
                       {index + 1}
                     </td>
                     <td className="flex items-center gap-3 p-4">
-                      <img className="h-8" src={coin.image} alt="coin-image" />
+                      <img className="h-8" src={coin.image} alt={coin.id} />
                       <p>{coin.name}</p>
                       <p className="max-sm:hidden sm2:block">.</p>
                       <p className="uppercase max-sm:hidden sm2:block">
@@ -172,7 +172,7 @@ const CoinsList = () => {
       >
         See more
       </Link>
-    </div>
+    </section>
   );
 };
 
