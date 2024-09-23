@@ -6,6 +6,7 @@ import { BiSolidDownArrow } from "react-icons/bi";
 import { Skeleton } from "@mui/material";
 import { useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import { convertNumber } from "../../functions/convertNumber";
 
 const CoinsList = () => {
   const [list, setList] = useState<CoinType[]>([]);
@@ -133,7 +134,7 @@ const CoinsList = () => {
                         {coin.symbol}
                       </p>
                     </td>
-                    <td className="p-4">{coin.current_price.toFixed()}$</td>
+                    <td className="p-4">{convertNumber(coin.current_price)}$</td>
                     {
                       <td className="p-4 text-sm">
                         {coin.price_change_percentage_24h >= 0 ? (
