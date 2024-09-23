@@ -81,7 +81,7 @@ const CoinsList = () => {
           </thead>
           <tbody>
             {loading
-              ? [...Array(4)].map((item , index) => (
+              ? [...Array(5)].map((item , index) => (
                   <tr key={index}>
                     <td className="px-6 py-4 max-sm:hidden sm:block">
                       <Skeleton
