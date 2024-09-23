@@ -55,7 +55,7 @@ const CoinsList = () => {
       }}
       className={`w-full flex flex-col items-center gap-5 ${
         error ? "justify-start" : "justify-center"
-      } p-4 h-[30rem]`}
+      } p-4 h-[max-content]`}
     >
       {error ? (
         <div className="p-4 rounded-xl bg-[#0D0D0D] 2xl:w-1/3 sm2:w-3/5 max-sm:w-full text-red-500 text-center">
