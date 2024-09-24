@@ -1,4 +1,5 @@
 import { BiSolidUpArrow } from "react-icons/bi";
+import { BiSolidDownArrow } from "react-icons/bi";
 import { CoinType } from "../types/DataTypes";
 import { Skeleton } from "@mui/material";
 
@@ -142,7 +143,7 @@ const CoinsTable = ({
                         </div>
                       ) : (
                         <div className="bg-[#310D0D] text-[#FF4D4D] p-1 w-[max-content] flex items-center gap-1 rounded-lg">
-                          <BiSolidUpArrow
+                          <BiSolidDownArrow
                             className="fill-[#FF4D4D]"
                             size={10}
                           />

@@ -1,9 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { CoinType } from "../../types/DataTypes";
-import { BiSolidUpArrow } from "react-icons/bi";
-import { BiSolidDownArrow } from "react-icons/bi";
-import { Skeleton } from "@mui/material";
 import { useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import CoinsTable from "../CoinsTable";
