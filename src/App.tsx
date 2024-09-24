@@ -7,7 +7,9 @@ const App = () => {
   return (
     <div className="bg-black text-white transition-all">
       <Nav />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
