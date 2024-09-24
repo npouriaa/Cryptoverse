@@ -55,7 +55,7 @@ const CoinsList = () => {
       }}
       className={`w-full flex flex-col items-center gap-5 ${
         error ? "justify-start" : "justify-center"
-      } p-4 h-[max-content]`}
+      } h-[max-content]`}
     >
       <CoinsTable
         dataArray={list?.splice(0, 5)}

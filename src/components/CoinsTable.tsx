@@ -20,7 +20,7 @@ const CoinsTable = ({
   showTotalVolume,
 }: CoinsTableProps) => {
   return (
-    <div className="flex justify-center items-center p-4 w-full">
+    <div className="flex justify-center items-center w-full p-4">
       {error ? (
         <div className="p-4 rounded-xl bg-[#0D0D0D] 2xl:w-1/3 sm2:w-3/5 max-sm:w-full text-red-500 text-center">
           {error} - Error while loading currencies. Please try again later
@@ -38,7 +38,7 @@ const CoinsTable = ({
               <th className="w-[5rem] p-4 text-start pt-5 font-light text-[#999999]">
                 Price
               </th>
-              <th className="p-4 text-start pt-5 font-light text-[#999999]">
+              <th className="w-[8.3rem] p-4 text-start pt-5 font-light text-[#999999]">
                 24h Change
               </th>
               {showTotalVolume && (
