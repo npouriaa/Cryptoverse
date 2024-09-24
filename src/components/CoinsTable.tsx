@@ -132,10 +132,26 @@ const CoinsTable = ({
                       {coin.current_price.toLocaleString()}$
                     </td>
                     <td className="p-4 text-sm">
-                      <div className="bg-[#1C291E] text-[#6ccf59] p-1 w-[max-content] flex items-center gap-1 rounded-lg">
-                        <BiSolidUpArrow className="fill-[#6ccf59]" size={10} />
-                        {coin.price_change_percentage_24h.toFixed(2)}%
-                      </div>
+                      {coin.price_change_percentage_24h >= 0 ? (
+                        <div className="bg-[#1C291E] text-[#6ccf59] p-1 w-[max-content] flex items-center gap-1 rounded-lg">
+                          <BiSolidUpArrow
+                            className="fill-[#6ccf59]"
+                            size={10}
+                          />
+                          {coin.price_change_percentage_24h.toFixed(2)}%
+                        </div>
+                      ) : (
+                        <div className="bg-[#310D0D] text-[#FF4D4D] p-1 w-[max-content] flex items-center gap-1 rounded-lg">
+                          <BiSolidUpArrow
+                            className="fill-[#FF4D4D]"
+                            size={10}
+                          />
+                          {Math.abs(coin.price_change_percentage_24h).toFixed(
+                            2
+                          )}
+                          %
+                        </div>
+                      )}
                     </td>
                     {showTotalVolume && (
                       <td className="p-4 max-sm:hidden md3:table-cell md3:pr-6 lg:pr-0">
