@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import LandingPage from "../pages/LandingPage";
 import App from "../App";
+import LandingPage from "../pages/LandingPage";
+import CryptoCurrencies from "../pages/CryptoCurrencies";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
+      },
+      {
+        path: "/coins",
+        element: <CryptoCurrencies />,
       },
       {
         path: "/compare",
