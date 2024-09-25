@@ -61,6 +61,7 @@ const CoinsList = () => {
         loadingRowCount={5}
         showMarketCap={false}
         showTotalVolume={false}
+        transitionalTableRow={false}
       />
       <Link
         to="/coins"
