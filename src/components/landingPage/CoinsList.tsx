@@ -1,45 +1,13 @@
-import axios from "axios";
-import { useEffect, useRef, useState } from "react";
-import { CoinType } from "../../types/DataTypes";
+import { useContext, useRef } from "react";
 import { useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import CoinsTable from "../CoinsTable";
+import { CoinsDataContext } from "../../context/CoinsDataContext";
 
 const CoinsList = () => {
-  const [list, setList] = useState<CoinType[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const { coinsList, loading, error } = useContext(CoinsDataContext);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
-
-  const getCoin = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const options = {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          "x-cg-api-key": import.meta.env.VITE_API_KEY,
-        },
-      };
-      const res = await axios.get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-        options
-      );
-      setList(res.data);
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-      setError((err as Error).message);
-      setLoading(false);
-    }
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    getCoin();
-  }, []);
 
   return (
     <section
@@ -55,7 +23,7 @@ const CoinsList = () => {
       } h-[max-content]`}
     >
       <CoinsTable
-        dataArray={list?.splice(0, 5)}
+        dataArray={coinsList?.splice(0, 5)}
         error={error}
         loading={loading}
         loadingRowCount={5}
