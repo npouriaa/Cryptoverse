@@ -8,6 +8,7 @@ const CoinsList = () => {
   const { coinsList, loading, error } = useContext(CoinsDataContext);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const coinArray = coinsList.slice(0 , 5)
 
   return (
     <section
@@ -23,7 +24,7 @@ const CoinsList = () => {
       } h-[max-content]`}
     >
       <CoinsTable
-        dataArray={coinsList?.splice(0, 5)}
+        dataArray={coinArray}
         error={error}
         loading={loading}
         loadingRowCount={5}

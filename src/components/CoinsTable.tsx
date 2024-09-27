@@ -123,7 +123,7 @@ const CoinsTable = ({
                         whileInView: { opacity: 1, x: 0 },
                         transition: {
                           delay: (index % 8) * 0.2,
-                          duration: 0.75,
+                          duration: 0.5,
                         },
                         viewport: { once: true },
                       }
@@ -135,7 +135,7 @@ const CoinsTable = ({
                       {...motionProps}
                     >
                       <td className="text-start px-6 py-4 max-sm:hidden sm:table-cell">
-                        {index + 1}
+                        {coin.market_cap_rank}
                       </td>
                       <td className="flex items-center gap-3 p-4">
                         <img className="h-8" src={coin.image} alt={coin.id} />
