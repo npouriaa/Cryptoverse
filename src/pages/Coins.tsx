@@ -2,6 +2,7 @@ import { ChangeEvent, useContext, useState } from "react";
 import CoinsTable from "../components/CoinsTable";
 import { CoinsDataContext } from "../context/CoinsDataContext";
 import PaginationComponent from "../components/coins/PaginationComponent";
+import Search from "../components/coins/Search";
 
 const Coins = () => {
   const { coinsList, loading, error, paginatedCoins, setPaginatedCoins } =
@@ -21,8 +22,14 @@ const Coins = () => {
     setPaginatedCoins(coinsList.slice(initialCount, initialCount + 10));
   };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
-    <div className="flex justify-center flex-col items-center max-sm:p-2 md3:p-6">
+    <div className="min-h-[86.2vh] flex justify-start flex-col items-center max-sm:pt-6 max-sm:p-2 md3:p-6">
+      <Search search={search} handleChange={handleChange} />
       <CoinsTable
         dataArray={search ? filteredCoins : paginatedCoins}
         loading={loading}
@@ -32,7 +39,9 @@ const Coins = () => {
         transitionalTableRow={true}
         loadingRowCount={10}
       />
-      <PaginationComponent handlePageChange={handlePageChange} page={page} />
+      {!search && !error && (
+        <PaginationComponent handlePageChange={handlePageChange} page={page} />
+      )}
     </div>
   );
 };
