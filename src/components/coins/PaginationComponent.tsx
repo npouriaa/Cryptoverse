@@ -31,6 +31,7 @@ const PaginationComponent = ({
       count={10}
       page={page}
       onChange={handlePageChange}
+      className="py-3"
     />
   );
 };
