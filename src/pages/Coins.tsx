@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import CoinsTable from "../components/CoinsTable";
 import { CoinsDataContext } from "../context/CoinsDataContext";
 import PaginationComponent from "../components/coins/PaginationComponent";
@@ -22,7 +22,7 @@ const Coins = () => {
   };
 
   return (
-    <div className="flex justify-center flex-col items-center p-8">
+    <div className="flex justify-center flex-col items-center max-sm:p-2 md3:p-6">
       <CoinsTable
         dataArray={search ? filteredCoins : paginatedCoins}
         loading={loading}

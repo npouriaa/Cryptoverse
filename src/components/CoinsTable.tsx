@@ -36,7 +36,7 @@ const CoinsTable = ({
               <th className="max-sm:hidden sm:block max-sm:w-[1rem] sm2:w-[4rem] text-start px-6 pb-4 pt-5 font-light text-[#999999]">
                 #
               </th>
-              <th className="max-sm:w-[9rem] sm2:w-[20rem] p-4 text-start pt-5 font-light text-[#999999]">
+              <th className="max-sm:w-[15rem] sm2:w-[20rem] p-4 text-start pt-5 font-light text-[#999999]">
                 Name
               </th>
               <th className="w-[5rem] p-4 text-start pt-5 font-light text-[#999999]">
@@ -137,7 +137,7 @@ const CoinsTable = ({
                       <td className="text-start px-6 py-4 max-sm:hidden sm:table-cell">
                         {coin.market_cap_rank}
                       </td>
-                      <td className="flex items-center gap-3 p-4">
+                      <td className="flex items-center gap-3 p-4 bg-">
                         <img className="h-8" src={coin.image} alt={coin.id} />
                         <p>{coin.name}</p>
                         <p className="max-sm:hidden sm2:block">.</p>
