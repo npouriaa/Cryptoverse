@@ -34,7 +34,7 @@ const CoinsDataContextProvider = ({
   );
 
   useEffect(() => {
-    const getCoin = async () => {
+    const getCoinsData = async () => {
       setLoading(true);
       setError("");
       try {
@@ -59,7 +59,7 @@ const CoinsDataContextProvider = ({
       }
       setLoading(false);
     };
-    getCoin();
+    getCoinsData();
   }, []);
 
   return (
