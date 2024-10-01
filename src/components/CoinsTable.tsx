@@ -68,7 +68,7 @@ const CoinsTable = ({
             {loading ? (
               [...Array(loadingRowCount)].map((item, index) => (
                 <tr key={index}>
-                  <td className="px-6 py-4 max-sm:hidden sm:block">
+                  <td className="px-6 py-4 max-sm:hidden sm:table-cell">
                     <Skeleton
                       sx={{ bgcolor: "grey.900" }}
                       height={30}
@@ -85,8 +85,24 @@ const CoinsTable = ({
                       variant="rounded"
                     />
                   </td>
+                  <td className="p-4">
+                    <Skeleton
+                      sx={{ bgcolor: "grey.900" }}
+                      height={30}
+                      animation="wave"
+                      variant="rounded"
+                    />
+                  </td>
+                  <td className="p-4">
+                    <Skeleton
+                      sx={{ bgcolor: "grey.900" }}
+                      height={30}
+                      animation="wave"
+                      variant="rounded"
+                    />
+                  </td>
                   {showTotalVolume && (
-                    <td className="p-4">
+                    <td className="p-4 max-sm:hidden md3:table-cell">
                       <Skeleton
                         sx={{ bgcolor: "grey.900" }}
                         height={30}
@@ -96,7 +112,7 @@ const CoinsTable = ({
                     </td>
                   )}
                   {showMarketCap && (
-                    <td className="p-4">
+                    <td className="p-4 max-sm:hidden lg:table-cell">
                       <Skeleton
                         sx={{ bgcolor: "grey.900" }}
                         height={30}
@@ -105,22 +121,6 @@ const CoinsTable = ({
                       />
                     </td>
                   )}
-                  <td className="p-4">
-                    <Skeleton
-                      sx={{ bgcolor: "grey.900" }}
-                      height={30}
-                      animation="wave"
-                      variant="rounded"
-                    />
-                  </td>
-                  <td className="p-4">
-                    <Skeleton
-                      sx={{ bgcolor: "grey.900" }}
-                      height={30}
-                      animation="wave"
-                      variant="rounded"
-                    />
-                  </td>
                 </tr>
               ))
             ) : dataArray.length > 0 ? (
