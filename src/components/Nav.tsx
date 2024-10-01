@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 type UlElementProps = {
   classNames: string;
@@ -25,7 +25,12 @@ const UlElement = ({ classNames }: UlElementProps) => {
 const Nav = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
+  const location = useLocation();
 
+  useEffect(() => {
+    setOpenSideMenu(false)
+  } , [location])
+  
   return (
     <nav className="h-16 py-2 px-4 bg-[#0D0D0D] border-b border-[#aaaaaa3c] flex items-center justify-between sticky top-0 z-[1000]">
       <Link className="text-2xl font-semibold flex" to="/">
@@ -43,7 +48,7 @@ const Nav = () => {
         <svg
           ref={svgRef}
           onClick={() => svgRef.current?.classList.toggle("active")}
-          className="ham hamRotate ham1 absolute"
+          className={`ham hamRotate ham1 absolute ${openSideMenu && "active"}`}
           viewBox="0 0 100 100"
           width={48}
         >
