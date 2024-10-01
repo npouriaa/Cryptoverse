@@ -13,6 +13,11 @@
   color: #fff;
 }
 
+body {
+  height: 100vh;
+  background-color: #000;
+}
+
 .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
