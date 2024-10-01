@@ -143,26 +143,16 @@ const CoinsTable = ({
                     className="hover:bg-[#1A1A1A] cursor-pointer max-sm:text-sm"
                     {...motionProps}
                   >
-                    <td className="max-sm:hidden sm:table-cell">
-                      <Link
-                        to={`/coin?${coin.id}`}
-                        className="px-6 py-4 text-start"
-                      >
+                    <td className="max-sm:hidden sm:table-cell px-6 py-4 text-start">
                         {coin.market_cap_rank}
-                      </Link>
                     </td>
-                    <td>
-                      <Link
-                        to={`/coin?${coin.id}`}
-                        className="flex items-center gap-3 p-4"
-                      >
+                    <td className="flex items-center gap-3 p-4">
                         <img className="h-8" src={coin.image} alt={coin.id} />
                         <p>{coin.name}</p>
                         <p className="max-sm:hidden sm2:block">.</p>
                         <p className="uppercase max-sm:hidden sm2:block">
                           {coin.symbol}
                         </p>
-                      </Link>
                     </td>
                     <td className="p-4">
                       {coin.current_price.toLocaleString()}$
