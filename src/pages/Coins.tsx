@@ -20,6 +20,10 @@ const Coins = () => {
     setPage(value);
     var initialCount = (value - 1) * 10;
     setPaginatedCoins(coinsList.slice(initialCount, initialCount + 10));
+    window.scrollTo({
+      top : 0,
+      behavior : "smooth"
+    })
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
