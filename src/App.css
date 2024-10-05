@@ -55,7 +55,7 @@ body {
 
 ::-webkit-scrollbar {
   background-color: #000;
-  width: .4rem;
+  width: 0.4rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -63,6 +63,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #FF9332;
+  background-color: #ff9332;
   border-radius: 0.4rem;
 }

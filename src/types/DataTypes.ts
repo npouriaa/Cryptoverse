@@ -1,3 +1,5 @@
+import { ChartDataset } from "chart.js";
+
 export type CoinType = {
   id: string;
   symbol: string;
@@ -44,4 +46,15 @@ export type CoinDetailsObjectType = {
   total_volume: number;
   current_price: number;
   market_cap: number;
+};
+
+export type CoinPricesType = {
+  prices: [number, number][];
+  total_volumes: [number, number][];
+  market_caps: [number, number][];
+};
+
+export type ChartDataType = {
+  labels: string[];
+  datasets: Array<ChartDataset<'line', number[]>>; // Enforcing correct type for datasets
 };
