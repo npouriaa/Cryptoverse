@@ -45,7 +45,7 @@ const CoinDetails = () => {
     console.log(coinData);
     if (coinData && coinId) {
       settingCoinObject(coinData, setCoin);
-      const prices = await getPrices(coinId, 90, priceType, setError);
+      const prices = await getPrices(coinId, 21, priceType, setError);
       console.log(prices);
       if (prices) {
         settingChartData(setChartData, prices);
@@ -64,7 +64,7 @@ const CoinDetails = () => {
   const options: ChartOptions<"line"> = {
     plugins: {
       legend: {
-        display:false,
+        display: false,
       },
     },
     responsive: true,

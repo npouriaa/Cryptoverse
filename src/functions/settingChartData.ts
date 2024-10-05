@@ -41,7 +41,13 @@ export const settingChartData = (
         {
           data: prices1?.map((data) => data[1]),
           borderWidth: 1,
-          fill: false,
+          fill: true,
+          backgroundColor: (ctx: any) => {
+            const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, "rgb(255, 147, 50)");
+            gradient.addColorStop(1, "#000");
+            return gradient;
+          },
           tension: 0.25,
           borderColor: "#FF9500",
           pointRadius: 0,
