@@ -8,6 +8,7 @@ import {
 } from "react";
 import { CoinType } from "../types/DataTypes";
 import axios from "axios";
+import { options } from "../reusable/requestOptions";
 
 type CoinsDataContextProviderType = {
   children: ReactNode;
@@ -38,13 +39,6 @@ const CoinsDataContextProvider = ({
       setLoading(true);
       setError("");
       try {
-        const options = {
-          method: "GET",
-          headers: {
-            "accept": "application/json",
-            "x-cg-api-key": import.meta.env.VITE_API_KEY,
-          },
-        };
         const res = await axios.get(
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false",
           options

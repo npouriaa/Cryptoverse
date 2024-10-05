@@ -1,5 +1,7 @@
 import axios from "axios";
 import { Dispatch, SetStateAction } from "react";
+import { CoinDetailsType } from "../types/DataTypes";
+import { options } from "../reusable/requestOptions";
 
 export const getCoinDetailsDatails = async (
   coinId: string | undefined,
@@ -7,19 +9,13 @@ export const getCoinDetailsDatails = async (
 ) => {
   try {
     setError("");
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        "x-cg-api-key": import.meta.env.VITE_API_KEY,
-      },
-    };
-    const res = await axios.get(
+    const res = await axios.get<CoinDetailsType>(
       `https://api.coingecko.com/api/v3/coins/${coinId}`,
       options
     );
-    console.log(res);
+    return res.data;
   } catch (err) {
     setError((err as Error).message);
+    return;
   }
 };

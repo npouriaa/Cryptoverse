@@ -14,7 +14,9 @@ export type CoinDetailsType = {
   id: string;
   name: string;
   symbol: string;
-  image: string;
+  image: {
+    large: string;
+  };
   description: {
     en: string;
   };
@@ -30,4 +32,16 @@ export type CoinDetailsType = {
       usd: number;
     };
   };
+};
+
+export type CoinDetailsObjectType = {
+  id: string;
+  name: string;
+  symbol: string;
+  image: string;
+  description: string;
+  price_change_percentage_24h: number;
+  total_volume: number;
+  current_price: number;
+  market_cap: number;
 };
