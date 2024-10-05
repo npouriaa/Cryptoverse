@@ -41,7 +41,7 @@ const CoinsDataContextProvider = ({
         const options = {
           method: "GET",
           headers: {
-            accept: "application/json",
+            "accept": "application/json",
             "x-cg-api-key": import.meta.env.VITE_API_KEY,
           },
         };
