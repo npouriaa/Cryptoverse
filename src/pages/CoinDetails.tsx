@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getCoinDetailsDatails } from "../../functions/getCoinDetailsData";
+import { getCoinDetailsDatails } from "../functions/getCoinDetailsData";
 import { useEffect, useState } from "react";
 
 const CoinDetails = () => {
@@ -8,7 +8,7 @@ const CoinDetails = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    getCoinDetailsDatails(coinId, setLoading, setError);
+    getCoinDetailsDatails(coinId, setError);
   }, []);
 
   return <div className="w-full"></div>;

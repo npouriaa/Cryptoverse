@@ -3,11 +3,9 @@ import { Dispatch, SetStateAction } from "react";
 
 export const getCoinDetailsDatails = async (
   coinId: string | undefined,
-  setLoading: Dispatch<SetStateAction<boolean>>,
   setError: Dispatch<SetStateAction<string>>
 ) => {
   try {
-    setLoading(true);
     setError("");
     const options = {
       method: "GET",
