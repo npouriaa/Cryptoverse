@@ -16,7 +16,12 @@ export const settingChartData = (
           data: prices1?.map((data) => data[1]),
           borderWidth: 1,
           fill: false,
-          backgroundColor: "rgba(58, 128, 233,0.1)",
+          backgroundColor: (ctx: any) => {
+            const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, "#824F07");
+            gradient.addColorStop(1, "#000");
+            return gradient;
+          },
           tension: 0.25,
           borderColor: "#FF9332",
           pointRadius: 0,
@@ -25,10 +30,16 @@ export const settingChartData = (
         {
           label: "Crypto 2",
           data: prices2?.map((data) => data[1]),
-          borderWidth: 1,
-          fill: false,
+          borderWidth: 3,
+          fill: true,
+          backgroundColor: (ctx: any) => {
+            const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, "#586292");
+            gradient.addColorStop(1, "#000");
+            return gradient;
+          },
           tension: 0.25,
-          borderColor: "#61c96f",
+          borderColor: "#5B6495",
           pointRadius: 0,
           yAxisID: "crypto2",
         },
@@ -40,11 +51,11 @@ export const settingChartData = (
       datasets: [
         {
           data: prices1?.map((data) => data[1]),
-          borderWidth: 1,
+          borderWidth: 3,
           fill: true,
           backgroundColor: (ctx: any) => {
             const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, "rgb(255, 147, 50)");
+            gradient.addColorStop(0, "#824F07");
             gradient.addColorStop(1, "#000");
             return gradient;
           },

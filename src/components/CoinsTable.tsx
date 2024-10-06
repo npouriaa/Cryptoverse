@@ -27,7 +27,7 @@ const CoinsTable = ({
   const navigate = useNavigate();
 
   const handleNavigate = (coin_id: string) => {
-    navigate(`/coin?${coin_id}`);
+    navigate(`/coin/${coin_id}`);
   };
 
   return (
