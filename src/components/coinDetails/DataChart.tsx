@@ -39,14 +39,20 @@ const DataChart = ({ chartData, multiAxis }: DataChartType) => {
       mode: "index",
       intersect: false,
     },
-    scales: {
-      crypto1: {
-        position: "left",
-      },
-      crypto2: {
-        position: "right",
-      }
-    },
+    scales: multiAxis
+      ? {
+          crypto1: {
+            position: "left",
+          },
+          crypto2: {
+            position: "right",
+          },
+        }
+      : {
+          crypto1: {
+            position: "left",
+          },
+        },
   };
   return (
     <div className="max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem] bg-[#0D0D0D] rounded-xl p-4">
