@@ -20,7 +20,7 @@ const CoinDetails = () => {
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [priceType, setPriceType] = useState<string>("prices");
-  const [days, setDays] = useState<number | string>(1);
+  const [days, setDays] = useState<number | string>(30);
   const [chartData, setChartData] = useState<ChartDataType>(
     {} as ChartDataType
   );
