@@ -55,9 +55,7 @@ const DataChart = ({ chartData, multiAxis }: DataChartType) => {
         },
   };
   return (
-    <div className="max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem] bg-[#0D0D0D] rounded-xl p-4">
       <Line data={chartData} options={options} />
-    </div>
   );
 };
 
