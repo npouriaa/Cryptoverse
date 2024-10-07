@@ -4,32 +4,12 @@ import { useEffect, useState } from "react";
 import { ChartDataType, CoinDetailsObjectType } from "../types/DataTypes";
 import { settingCoinObject } from "../functions/settingCoinObject";
 import { getPrices } from "../functions/getPrices";
-import { Line } from "react-chartjs-2";
 import { settingChartData } from "../functions/settingChartData";
-import {
-  Chart as ChartJS,
-  LinearScale,
-  CategoryScale,
-  PointElement,
-  LineElement,
-  Tooltip,
-  Legend,
-  ChartOptions,
-  Filler,
-} from "chart.js";
-import LoaderSpinner from "../components/landingPage/LoaderSpinner";
-import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
-import Details from "../components/coinDetails/Details";
 
-ChartJS.register(
-  LinearScale,
-  CategoryScale,
-  PointElement,
-  LineElement,
-  Tooltip,
-  Legend,
-  Filler
-);
+import LoaderSpinner from "../components/landingPage/LoaderSpinner";
+import Details from "../components/coinDetails/Details";
+import DataChart from "../components/coinDetails/DataChart";
+
 
 const CoinDetails = () => {
   const { coinId } = useParams();
@@ -64,35 +44,12 @@ const CoinDetails = () => {
     getData();
   }, [coinId]);
 
-  const options: ChartOptions<"line"> = {
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    responsive: true,
-    interaction: {
-      mode: "index",
-      intersect: false,
-    },
-    scales: {
-      crypto1: {
-        position: "left",
-      },
-      // crypto2: multiAxis && {
-      //   position: "right",
-      // },
-    },
-  };
-
   return (
     <div className="w-full min-h-[86.5vh] flex justify-center items-start py-4">
       {!loading && !error && coin !== undefined ? (
         <div className="flex flex-col justify-start items-center gap-6 p-4">
-          <Details coin={coin}/>
-          <div className="max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem] bg-[#0D0D0D] rounded-xl p-4">
-            <Line data={chartData} options={options} />
-          </div>
+          <Details coin={coin} />
+          <DataChart chartData={chartData} multiAxis={false} />
         </div>
       ) : error ? (
         <div className="p-4 2xl:w-1/3 sm2:w-3/5 max-sm:w-full">
