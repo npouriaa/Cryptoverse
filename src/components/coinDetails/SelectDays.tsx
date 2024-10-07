@@ -8,8 +8,8 @@ type SelectDaysProps = {
 
 const SelectDays = ({ days, handleDaysChange, pTag }: SelectDaysProps) => {
   return (
-    <div className="flex items-center gap-3 mb-4">
-      {!pTag && <p>Price change in </p>}
+    <div className="flex items-center gap-3 mb-4 text-sm">
+      {!pTag && <p >Price change in </p>}
 
       <Select
         value={days}
@@ -17,6 +17,7 @@ const SelectDays = ({ days, handleDaysChange, pTag }: SelectDaysProps) => {
         sx={{
           height: "2.5rem",
           color: "#fff",
+          fontSize : "0.875rem",
           borderRadius: ".5rem",
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: "#ff9332 !important",
