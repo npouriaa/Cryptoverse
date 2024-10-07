@@ -9,6 +9,8 @@ import { settingChartData } from "../functions/settingChartData";
 import LoaderSpinner from "../components/landingPage/LoaderSpinner";
 import Details from "../components/coinDetails/Details";
 import DataChart from "../components/coinDetails/DataChart";
+import SelectDays from "../components/coinDetails/SelectDays";
+import { SelectChangeEvent } from "@mui/material";
 
 const CoinDetails = () => {
   const { coinId } = useParams();
@@ -18,6 +20,7 @@ const CoinDetails = () => {
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [priceType, setPriceType] = useState<string>("prices");
+  const [days, setDays] = useState<number | string>(1);
   const [chartData, setChartData] = useState<ChartDataType>(
     {} as ChartDataType
   );
@@ -27,7 +30,7 @@ const CoinDetails = () => {
     let coinData = await getCoinDetailsDatails(coinId, setError);
     if (coinData && coinId) {
       settingCoinObject(coinData, setCoin);
-      const prices = await getPrices(coinId, 21, priceType, setError);
+      const prices = await getPrices(coinId, days, priceType, setError);
       console.log(prices);
       if (prices) {
         settingChartData(setChartData, prices);
@@ -37,6 +40,25 @@ const CoinDetails = () => {
       setError("No coin data available");
     }
     setLoading(false);
+  };
+
+  const handleDaysChange = async (
+    event: SelectChangeEvent<number | string>
+  ) => {
+    if (coinId) {
+      setLoading(true);
+      setDays(event.target.value);
+      const prices = await getPrices(
+        coinId,
+        event.target.value,
+        priceType,
+        setError
+      );
+      if (prices) {
+        settingChartData(setChartData, prices);
+        setLoading(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -49,6 +71,7 @@ const CoinDetails = () => {
         <div className="flex flex-col justify-start items-center gap-6 p-4">
           <Details coin={coin} />
           <div className="max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem] bg-[#0D0D0D] rounded-xl p-4">
+            <SelectDays days={days} handleDaysChange={handleDaysChange} pTag={false}/>
             <DataChart chartData={chartData} multiAxis={false} />
           </div>
         </div>

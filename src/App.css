@@ -99,3 +99,12 @@ body {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
+
+.css-99wn1p-MuiList-root-MuiMenu-list {
+  background-color: #0d0d0d;
+}
+
+.MuiPaper-root {
+  margin-top: .5rem;
+}
+

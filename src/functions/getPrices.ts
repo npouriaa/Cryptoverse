@@ -5,7 +5,7 @@ import { CoinPricesType } from "../types/DataTypes";
 
 export const getPrices = async (
   id: string,
-  days: number,
+  days: number | string,
   priceType: string,
   setError: Dispatch<SetStateAction<string>>
 ) => {
