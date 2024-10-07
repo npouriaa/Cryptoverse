@@ -19,7 +19,7 @@ export const settingChartData = (
           backgroundColor: (ctx: any) => {
             const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
             gradient.addColorStop(0, "#824F07");
-            gradient.addColorStop(1, "#000");
+            gradient.addColorStop(1, "#0D0D0D");
             return gradient;
           },
           tension: 0.25,
@@ -35,7 +35,7 @@ export const settingChartData = (
           backgroundColor: (ctx: any) => {
             const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
             gradient.addColorStop(0, "#586292");
-            gradient.addColorStop(1, "#000");
+            gradient.addColorStop(1, "#0D0D0D");
             return gradient;
           },
           tension: 0.25,
@@ -56,7 +56,7 @@ export const settingChartData = (
           backgroundColor: (ctx: any) => {
             const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 400);
             gradient.addColorStop(0, "#824F07");
-            gradient.addColorStop(1, "#000");
+            gradient.addColorStop(1, "#0D0D0D");
             return gradient;
           },
           tension: 0.25,

@@ -12,5 +12,6 @@ export const settingCoinObject = (data : CoinDetailsType, setCoin : Dispatch<Set
       total_volume: data.market_data.total_volume.usd,
       current_price: data.market_data.current_price.usd,
       market_cap: data.market_data.market_cap.usd,
+      market_cap_rank : data.market_data.market_cap_rank
     });
   };

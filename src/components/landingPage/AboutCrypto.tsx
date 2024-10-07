@@ -19,7 +19,7 @@ const AboutCrypto = () => {
           transitionDuration: "0.75s",
         }}
         ref={sec1}
-        className="max-sm:w-full xl:w-3/4 3xl:w-1/2 flex max-sm:flex-col md:flex-row xl:flex-row justify-center items-center gap-10"
+        className="max-sm:w-full xl:w-3/4 5xl:w-1/2 flex max-sm:flex-col md:flex-row xl:flex-row justify-center items-center gap-10"
       >
         <div className="max-sm:w-full md: md3:w-1/2 flex flex-col gap-2">
           <h3 className="text-2xl font-bold">What is Cryptocurrency?</h3>
@@ -46,7 +46,7 @@ const AboutCrypto = () => {
           transitionDuration: "0.75s",
         }}
         ref={sec2}
-        className="max-sm:w-full xl:w-3/4 3xl:w-1/2 flex max-sm:flex-col md:flex-row xl:flex-row justify-center items-center gap-10"
+        className="max-sm:w-full xl:w-3/4 5xl:w-1/2 flex max-sm:flex-col md:flex-row xl:flex-row justify-center items-center gap-10"
       >
         <div className="max-sm:w-full md: md3:w-1/2 flex flex-col gap-2 md:order-1">
           <h3 className="text-2xl font-bold">How Does Cryptocurrency Work?</h3>

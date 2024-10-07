@@ -30,6 +30,7 @@ export type CoinDetailsType = {
     current_price: {
       usd: number;
     };
+    market_cap_rank: number;
     market_cap: {
       usd: number;
     };
@@ -46,6 +47,7 @@ export type CoinDetailsObjectType = {
   total_volume: number;
   current_price: number;
   market_cap: number;
+  market_cap_rank: number;
 };
 
 export type CoinPricesType = {
@@ -56,5 +58,5 @@ export type CoinPricesType = {
 
 export type ChartDataType = {
   labels: string[];
-  datasets: Array<ChartDataset<'line', number[]>>; // Enforcing correct type for datasets
+  datasets: Array<ChartDataset<"line", number[]>>; // Enforcing correct type for datasets
 };
