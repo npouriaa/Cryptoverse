@@ -63,7 +63,7 @@ const CoinDetails = () => {
   };
 
   const handlePriceTypeChange = async (
-    event: React.MouseEvent<HTMLElement>,
+    event: MouseEvent<HTMLElement>,
     newPriceType: string
   ) => {
     if (coinId && newPriceType) {
