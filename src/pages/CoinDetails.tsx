@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { getCoinDetailsDatails } from "../functions/getCoinDetailsData";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { ChartDataType, CoinDetailsObjectType } from "../types/DataTypes";
 import { settingCoinObject } from "../functions/settingCoinObject";
 import { getPrices } from "../functions/getPrices";
@@ -11,6 +11,7 @@ import Details from "../components/coinDetails/Details";
 import DataChart from "../components/coinDetails/DataChart";
 import SelectDays from "../components/coinDetails/SelectDays";
 import { SelectChangeEvent } from "@mui/material";
+import TogglePriceType from "../components/coinDetails/TogglePriceType";
 
 const CoinDetails = () => {
   const { coinId } = useParams();
@@ -61,6 +62,20 @@ const CoinDetails = () => {
     }
   };
 
+  const handlePriceTypeChange = async (
+    event: React.MouseEvent<HTMLElement>,
+    newPriceType: string
+  ) => {
+    if (coinId && newPriceType) {
+      setPriceType(newPriceType);
+      console.log(newPriceType)
+      const prices = await getPrices(coinId, days, newPriceType, setError);
+      if (prices) {
+        settingChartData(setChartData, prices);
+      }
+    }
+  };
+
   useEffect(() => {
     getData();
   }, [coinId]);
@@ -71,7 +86,15 @@ const CoinDetails = () => {
         <div className="flex flex-col justify-start items-center gap-6 p-4">
           <Details coin={coin} />
           <div className="max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem] bg-[#0D0D0D] rounded-xl p-4">
-            <SelectDays days={days} handleDaysChange={handleDaysChange} pTag={false}/>
+            <SelectDays
+              days={days}
+              handleDaysChange={handleDaysChange}
+              pTag={false}
+            />
+            <TogglePriceType
+              priceType={priceType}
+              handlePriceTypeChange={handlePriceTypeChange}
+            />
             <DataChart chartData={chartData} multiAxis={false} />
           </div>
         </div>
