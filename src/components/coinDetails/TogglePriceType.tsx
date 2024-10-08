@@ -3,7 +3,10 @@ import { MouseEvent } from "react";
 
 type TogglePriceProps = {
   priceType: string;
-  handlePriceTypeChange: (event: MouseEvent<HTMLElement>, newPriceType: string) => void;
+  handlePriceTypeChange: (
+    event: MouseEvent<HTMLElement>,
+    newPriceType: string
+  ) => void;
 };
 
 const TogglePriceType = ({
@@ -11,25 +14,30 @@ const TogglePriceType = ({
   handlePriceTypeChange,
 }: TogglePriceProps) => {
   return (
-    <div>
+    <div className="mb-5 flex justify-center p-1 items-center">
       <ToggleButtonGroup
         value={priceType}
         exclusive
         onChange={handlePriceTypeChange}
         sx={{
-          "&.Mui-selected": {
-            color: "#ff9332",
-          },
-          borderColor: "#ff9332",
-          border: "unset !important",
-          borderRadius: ".5rem !important",
+          height: "2.7rem",
           "& .MuiToggleButtonGroup-grouped": {
+            fontSize: "0.75rem",
             border: "1px solid #ff9332 !important",
             borderColor: "unset",
-            color: "#fff !important ",
+            color: "#fff ",
+            fontFamily: "poppins_regular",
           },
-          "& .MuiToggleButton-standard": {
-            color: "#fff !important",
+          "& .MuiToggleButtonGroup-firstButton": {
+            borderTopLeftRadius: ".5rem",
+            borderBottomLeftRadius: ".5rem",
+          },
+          "& .MuiToggleButtonGroup-lastButton": {
+            borderTopRightRadius: ".5rem",
+            borderBottomRightRadius: ".5rem",
+          },
+          "& .Mui-selected": {
+            backgroundColor: "#ff9332 !important",
           },
         }}
       >

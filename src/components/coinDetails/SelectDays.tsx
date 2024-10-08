@@ -15,9 +15,9 @@ const SelectDays = ({ days, handleDaysChange, pTag }: SelectDaysProps) => {
         value={days}
         onChange={handleDaysChange}
         sx={{
-          height: "2.5rem",
+          height: "2.3rem",
           color: "#fff",
-          fontSize : "0.875rem",
+          fontSize : "0.75rem",
           borderRadius: ".5rem",
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: "#ff9332 !important",
