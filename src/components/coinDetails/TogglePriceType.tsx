@@ -38,6 +38,7 @@ const TogglePriceType = ({
           },
           "& .Mui-selected": {
             backgroundColor: "#ff9332 !important",
+            color : "#000 !important"
           },
         }}
       >
