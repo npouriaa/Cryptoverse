@@ -12,6 +12,7 @@ import DataChart from "../components/coinDetails/DataChart";
 import SelectDays from "../components/coinDetails/SelectDays";
 import { SelectChangeEvent } from "@mui/material";
 import TogglePriceType from "../components/coinDetails/TogglePriceType";
+import Description from "../components/coinDetails/Description";
 
 const CoinDetails = () => {
   const { coinId } = useParams();
@@ -68,7 +69,7 @@ const CoinDetails = () => {
   ) => {
     if (coinId && newPriceType) {
       setPriceType(newPriceType);
-      console.log(newPriceType)
+      console.log(newPriceType);
       const prices = await getPrices(coinId, days, newPriceType, setError);
       if (prices) {
         settingChartData(setChartData, prices);
@@ -83,9 +84,9 @@ const CoinDetails = () => {
   return (
     <div className="w-full min-h-[86.5vh] flex justify-center items-start py-4">
       {!loading && !error && coin !== undefined ? (
-        <div className="flex flex-col justify-start items-center gap-6 p-4">
+        <div className="flex flex-col justify-start items-center gap-6 p-4 max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem]">
           <Details coin={coin} />
-          <div className="max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem] bg-[#0D0D0D] rounded-xl p-4">
+          <div className=" bg-[#0D0D0D] rounded-xl p-4 w-full">
             <SelectDays
               days={days}
               handleDaysChange={handleDaysChange}
@@ -97,6 +98,7 @@ const CoinDetails = () => {
             />
             <DataChart chartData={chartData} multiAxis={false} />
           </div>
+            <Description description={coin.description} name={coin.name}/>
         </div>
       ) : error ? (
         <div className="p-4 2xl:w-1/3 sm2:w-3/5 max-sm:w-full">

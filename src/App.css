@@ -108,3 +108,7 @@ body {
   margin-top: .5rem;
 }
 
+.coin-description a{
+  color: #ff9332;
+  text-decoration: underline;
+}
