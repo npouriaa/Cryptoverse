@@ -84,7 +84,7 @@ const CoinDetails = () => {
   return (
     <div className="w-full min-h-[86.5vh] flex justify-center items-start py-4">
       {!loading && !error && coin !== undefined ? (
-        <div className="flex flex-col justify-start items-center gap-6 p-4 max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem]">
+        <div className="flex flex-col justify-start max-sm:p-4 md2:p-0 items-center gap-6 max-sm:w-full md2:w-[95%] md3:w-[90%] xl:w-[90%] 2xl:w-[62.5rem]">
           <Details coin={coin} />
           <div className=" bg-[#0D0D0D] rounded-xl p-4 w-full">
             <SelectDays

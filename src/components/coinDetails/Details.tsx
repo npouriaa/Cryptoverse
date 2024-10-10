@@ -8,7 +8,7 @@ type DetailsProps = {
 
 const Details = ({ coin }: DetailsProps) => {
   return (
-    <table className="bg-[#0d0d0d] rounded-xl max-sm:w-full md2:w-[95%] xl:w-[90%] 2xl:w-[62.5rem]">
+    <table className="bg-[#0d0d0d] rounded-xl max-sm:w-full 2xl:w-[62.5rem]">
       <thead>
         <tr className="text-sm">
           <th className="max-sm:hidden sm:block max-sm:w-[1rem] sm2:w-[4rem] text-start px-6 pb-4 pt-5 font-light text-[#999999]">
