@@ -101,7 +101,7 @@ body {
 }
 
 .css-99wn1p-MuiList-root-MuiMenu-list {
-  background-color: #0d0d0d;
+  background-color: #0d0d0d !important;
 }
 
 .MuiPaper-root {
