@@ -64,7 +64,7 @@ const CoinDetails = () => {
   };
 
   const handlePriceTypeChange = async (
-    event: MouseEvent<HTMLElement>,
+    _event: MouseEvent<HTMLElement>,
     newPriceType: string
   ) => {
     if (coinId && newPriceType) {

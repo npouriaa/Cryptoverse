@@ -66,7 +66,7 @@ const CoinsTable = ({
           </thead>
           <tbody>
             {loading ? (
-              [...Array(loadingRowCount)].map((item, index) => (
+              [...Array(loadingRowCount)].map((_item, index) => (
                 <tr key={index}>
                   <td className="px-6 py-4 max-sm:hidden sm:table-cell">
                     <Skeleton

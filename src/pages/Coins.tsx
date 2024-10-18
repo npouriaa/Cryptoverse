@@ -22,7 +22,7 @@ const Coins = () => {
       coin.symbol.toLowerCase().includes(search.trim().toLowerCase())
   );
 
-  const handlePageChange = (event: ChangeEvent<unknown>, value: number) => {
+  const handlePageChange = (_event: ChangeEvent<unknown>, value: number) => {
     setPage(value);
     var initialCount = (value - 1) * 10;
     setPaginatedCoins(coinsList.slice(initialCount, initialCount + 10));
