@@ -24,14 +24,13 @@ ChartJS.register(
 
 type DataChartType = {
   chartData: ChartDataType;
-  multiAxis: boolean;
 };
 
-const DataChart = ({ chartData, multiAxis }: DataChartType) => {
+const DataChart = ({ chartData }: DataChartType) => {
   const options: ChartOptions<"line"> = {
     plugins: {
       legend: {
-        display: multiAxis ? true : false,
+        display: false,
       },
     },
     responsive: true,
@@ -39,24 +38,13 @@ const DataChart = ({ chartData, multiAxis }: DataChartType) => {
       mode: "index",
       intersect: false,
     },
-    scales: multiAxis
-      ? {
-          crypto1: {
-            position: "left",
-          },
-          crypto2: {
-            position: "right",
-          },
-        }
-      : {
-          crypto1: {
-            position: "left",
-          },
-        },
+    scales: {
+      crypto1: {
+        position: "left",
+      },
+    },
   };
-  return (
-      <Line data={chartData} options={options} />
-  );
+  return <Line data={chartData} options={options} />;
 };
 
 export default DataChart;

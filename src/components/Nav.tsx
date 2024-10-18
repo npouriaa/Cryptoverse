@@ -13,10 +13,10 @@ const UlElement = ({ classNames }: UlElementProps) => {
         <Link to="/">Home</Link>
       </li>
       <li className="hover:text-[#FF9332] text-white transition-all p-1">
-        <Link to="/compare">Compare</Link>
+        <Link to="/coins">Cryptocurrencies</Link>
       </li>
       <li className="hover:text-[#FF9332] text-white transition-all p-1">
-        <Link to="/coins">Cryptocurrencies</Link>
+        <Link to="https://www.linkedin.com/in/npouriaa" target="_blank">About us</Link>
       </li>
     </ul>
   );

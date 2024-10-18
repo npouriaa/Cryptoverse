@@ -21,10 +21,6 @@ const router = createBrowserRouter([
         path: "/coin/:coinId",
         element: <CoinDetails />,
       },
-      {
-        path: "/compare",
-        element: <p>compare</p>,
-      },
     ],
   },
 ]);

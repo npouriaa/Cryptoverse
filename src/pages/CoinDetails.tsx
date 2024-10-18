@@ -96,7 +96,7 @@ const CoinDetails = () => {
               priceType={priceType}
               handlePriceTypeChange={handlePriceTypeChange}
             />
-            <DataChart chartData={chartData} multiAxis={false} />
+            <DataChart chartData={chartData} />
           </div>
             <Description description={coin.description} name={coin.name}/>
         </div>
